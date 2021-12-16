@@ -19,7 +19,7 @@ int main(void)
 	printArray(arr, arraySize);
 }
 
-
+// selection sort
 void selectionSort(int arr[], int arraySize)
 {
 	for (int i = 0; i < arraySize - 1; i++)
@@ -39,6 +39,7 @@ void selectionSort(int arr[], int arraySize)
 	}
 }
 
+//print array
 void printArray(int arr[], int arraySize)
 {
 	for (int i = 0; i < arraySize; i++)
