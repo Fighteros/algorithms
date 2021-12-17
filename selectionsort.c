@@ -1,8 +1,8 @@
 #include <stdio.h>
+#include "util.h"
 // function prototypes
 
 void sort(int *arr, int size);
-void printArr(int *arr, int size);
 
 int main()
 {
@@ -34,15 +34,4 @@ void sort(int *arr, int size)
         arr[minNumberIndex] = arr[i];
         arr[i] = temp;
     }
-}
-
-// helper function to print the array
-void printArr(int *arr, int size)
-{
-    printf("[ ");
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", arr[i]);
-    }
-    printf("]\n");
 }
