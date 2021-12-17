@@ -30,12 +30,12 @@ void bubbleSort(int *arr, int size)
                 arr[j] = temp;
                 isSorted = false;
             }
+        }
 
-            if (isSorted == true)
-            {
-                printf("sorted array break now!\n");
-                return;
-            }
+        if (isSorted == true)
+        {
+            printf("sorted array break now!\n");
+            break;
         }
     }
 }
