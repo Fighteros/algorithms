@@ -9,6 +9,7 @@ void printArray(int arr[], int arraySize);
 void bubbleSort(int arr[], int arraySize);
 void mergeSort(int arr[], int start, int end);
 void merge(int arr[], int start, int midpoint, int end);
+void insertionSort(int arr[], int size);
 
 int main(void)
 {
@@ -22,10 +23,31 @@ int main(void)
 	//bubbleSort(arr, arraySize);
 	//bubbleSort(arr_sorted, arraySize);
 
-	mergeSort(arr, 0, arraySize - 1);
+	//mergeSort(arr, 0, arraySize - 1);
 
+	insertionSort(arr, arraySize);
 	printArray(arr, arraySize);
 }
+
+/* insertion sort - good with linked list */
+// 80 90 60 40 50 70 30
+void insertionSort(int arr[], int size)
+{
+	int key, j;
+	for (int i = 1; i < size; i++)
+	{
+		key = arr[i];
+		j = i - 1;
+
+		while (j >= 0 && arr[j] > key)
+		{
+			arr[j + 1] = arr[j];
+			j = j - 1;
+		}
+		arr[j + 1] = key;
+	}
+}
+/* insertion sort  */
 
 // selection sort
 void selectionSort(int arr[], int arraySize)
