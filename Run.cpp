@@ -41,7 +41,7 @@ void quickSort(int arr[], int start, int end)
 	if (start < end)
 	{
 		int pivot = partition(arr,start, end);
-		cout << pivot << endl;
+		//cout << pivot << endl;
 
 		quickSort(arr, start, pivot);
 		quickSort(arr, pivot + 1, end);
