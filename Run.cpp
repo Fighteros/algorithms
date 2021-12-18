@@ -10,6 +10,9 @@ void bubbleSort(int arr[], int arraySize);
 void mergeSort(int arr[], int start, int end);
 void merge(int arr[], int start, int midpoint, int end);
 void insertionSort(int arr[], int size);
+void quickSort(int arr[], int start, int end);
+int partition(int arr[], int start, int end);
+
 
 int main(void)
 {
@@ -25,9 +28,61 @@ int main(void)
 
 	//mergeSort(arr, 0, arraySize - 1);
 
-	insertionSort(arr, arraySize);
+	//insertionSort(arr, arraySize);
+
+	quickSort(arr, 0, arraySize - 1);
+
 	printArray(arr, arraySize);
 }
+
+/* quick sort */
+void quickSort(int arr[], int start, int end)
+{
+	if (start < end)
+	{
+		int pivot = partition(arr,start, end);
+		cout << pivot << endl;
+
+		quickSort(arr, start, pivot);
+		quickSort(arr, pivot + 1, end);
+	}
+}
+
+ 
+int partition(int arr[], int start, int end)
+{
+	int i = start;
+	int j = end;
+
+	int pivot = arr[start];
+
+	while(i < j)
+	{
+		while (arr[i] < pivot){
+			i++;
+		}
+
+		while (arr[j] > pivot)
+		{
+			j--;
+		}
+	
+
+		if (i < j)
+		{
+			// swap elements
+			int temp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = temp;
+		}
+	}
+	return j;
+}
+
+
+
+/* end quick sort */
+
 
 /* insertion sort - good with linked list */
 // 80 90 60 40 50 70 30
